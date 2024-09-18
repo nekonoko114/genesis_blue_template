@@ -1,0 +1,73 @@
+@use "../btn" as *;
+@use "../color" as *;
+@use "../mixin" as *;
+@use "../setting" as *;
+@use "../variable" as *;
+
+
+.aboutAccess {
+
+    &__wrapper {
+
+    }
+
+    &__flex {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background: $color-main;
+        padding: 200px 100px;
+
+        @include mq() {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__left {
+        width: 30%;
+        color: #fff;
+        @include mq() {
+            width: 100%;
+        }
+    }
+
+    &__ttl {
+        font-size: 48px;
+    }
+
+    &__right {
+        width: 70%;
+        color: #fff;
+        font-size: 32px;
+        @include mq() {
+            width: 100%;
+        }
+
+        p {
+            margin-top: 40px;
+        }
+    }
+    
+
+    &__postl {
+
+    }
+
+    &__address {
+        margin: 10px;
+        a {
+            color: #fff;
+            padding: 4px 12px;
+            border: 2px solid #fff;
+            border-radius: 999px;
+            font-size: 16px;
+
+            &:hover {
+                border: 2px solid yellow;
+                background: #fff;
+                color: $color-main;
+            }
+        }
+    }
+}

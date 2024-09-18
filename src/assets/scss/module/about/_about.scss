@@ -1,0 +1,149 @@
+@use "../btn" as *;
+@use "../color" as *;
+@use "../mixin" as *;
+@use "../setting" as *;
+@use "../variable" as *;
+
+.aboutPage {
+    margin-top: 100px;
+    height: 100vh;
+    &__wrapper {
+        
+    }
+
+    &__flex {
+        display: flex;
+        justify-content: space-around;
+        height: 100vh;
+
+        @include mq() {
+            height: 100vh;
+            flex-direction: column-reverse;
+        }
+    }
+    &__left {
+        background: $color-main;
+        width: 50%;
+        padding: 60px;
+        color: #fff;
+        overflow: scroll;
+
+        @include mq() {
+            width: 100%;
+        }
+    }
+
+    &__right {
+        width: 50%;        
+        object-fit: cover;
+        @include mq() {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+
+            @include mq() {
+                height: 30vh;
+            }
+        }
+    }
+
+    &__title {
+        
+    }
+
+    &__text {
+        margin-top: 24px;
+        &-first {
+            font-size: 32px;
+        }
+
+        &-second {
+            font-size: 18px;
+        }
+
+        &-sird {
+            font-size: 16px;
+        }
+
+    }
+
+    &__right {
+
+        img {
+
+        }
+    }
+}
+
+.aboutBg {
+    width: 100%;
+    height: 100vh;
+    transition: all 0.9s ease 0s;
+    overflow: hidden;
+    
+    &__inner {
+        background: url("#{$imgPath}car_show.jpg") center center / cover;
+        width: 100%;
+        height: 100vh;
+        background-attachment: fixed;
+        transition: all 0.9s ease 0s;
+        transform: scale(1.2, 1.2);
+        animation: zoomInOut 10s ease-in-out infinite;
+
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1.2);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.swiper-container {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;          /* ビューポートの上端に達すると固定される */
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+
+.swiper-wrapper {
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    height: auto;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.swiper-slide-active img {
+    animation: zoomUp 5s ease-out forwards; /* アクティブなスライドにズームアニメーション */
+    
+    transform: scale(1); /* アクティブスライドをズームイン */
+
+    @keyframes zoomUp {
+        0% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+        100% {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        }
+}

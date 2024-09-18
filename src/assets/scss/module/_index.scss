@@ -7,4 +7,12 @@
 
 //sectionエリア内のスタイル各自それぞれのスタイル
 
-@use "./home/about";
+@use "./home/mainvisual";
+@use "./home/event";
+@use "./home/hours";
+@use "./home/access";
+
+@use "./about/about";
+@use "./about/aboutAccess";
+
+@use "./news/news";

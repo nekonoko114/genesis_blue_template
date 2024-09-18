@@ -1,18 +1,17 @@
-const swiper = new Swiper(".swiper", {
-    loop: true, // ループ有効
-    slidesPerView: 5, // 一度に表示する枚数
-    speed: 6000, // ループの時間
-    allowTouchMove: false, // スワイプ無効
-    autoplay: {
-      delay: 0, // 途切れなくループ
-    },
-    slidesPerView: 1,
-    breakpoints: {
-      // スライドの表示枚数：500px以上の場合
-      500: {
-        slidesPerView: 3,
-      }
-    },
-    
-    
-  });
+const swiper = new Swiper('.swiper-container', {
+  effect: 'fade',       // フェードエフェクト
+  loop: true,           // ループを有効化
+  autoplay: {
+      delay: 5000,      // 3秒ごとにスライド
+      disableOnInteraction: false,  // インタラクション後も自動再生を続ける
+  },
+  fadeEffect: {
+      crossFade: true   // フェードの際にスライドが重ならないようにする
+  },
+  speed: 4000,
+  zoom: {               // ズームモジュールの有効化
+      maxRatio: 1.2,    // 最大ズーム倍率
+      toggle: false     // ズームを手動でトリガーしない
+  },
+  parallax: true, 
+});

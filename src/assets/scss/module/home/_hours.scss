@@ -1,0 +1,71 @@
+@use '../setting' as *;
+@use '../color' as *;
+@use '../variable' as *;
+@use '../mixin' as *;
+
+.hours {
+    z-index: 9;
+    &__wrapper {
+        position: relative;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+
+        width: 400px;
+        text-align: center;
+        z-index: 9;
+        @include mq() {
+            width: 300px;
+        }
+    }
+
+    &__wrap {
+        text-align: center;
+    }
+
+    &__ttl {
+        font-size: $big-title;
+        color: #fff;
+        text-shadow: 4px 4px 12px #333;
+    }
+
+    &__date {
+        margin-top: 40px;
+        color: #fff;
+        background: #000;
+        padding: 1px;
+        width: 100%;
+        span {
+            margin-right: 14px;
+        }
+    }
+
+    &__time {
+        margin-top: 40px;
+        color: #fff;
+        background: #000;
+        padding: 1px;
+        
+        span {
+            // margin-right: 14px;
+        }
+    }
+
+    &__btn {
+        margin-top: 40px;
+        @include outline-btn();
+        a {
+            border-radius: 999px;
+        }
+    }
+
+}
+
+.tokyo {
+
+    img {
+        position: relative;
+        z-index: 10;
+
+    }
+}

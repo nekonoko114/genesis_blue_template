@@ -3,4 +3,26 @@
 @use "../color" as *;
 @use "../variable" as *;
 
+.footer {
+    bottom: 0;
+    left: 0;
+    background: darken($color-main , 15%);
+    width: 100%;
+    padding: 50px;
+    &__inner {
+    
+    }
 
+    &__menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__list {
+
+        a {
+            color: #fff;
+        }
+    }
+}

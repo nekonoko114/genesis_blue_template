@@ -1,0 +1,161 @@
+@use '../setting' as *;
+@use '../color' as *;
+@use '../variable' as *;
+@use '../mixin' as *;
+
+
+.top-event {
+    position: relative;
+    z-index: 2; /* 背景画像の上に表示するため z-index を 2 に設定 */
+    background-color: #fff; /* 背景に白を設定して、重なったときに見やすくする */
+    padding: 50px 0;
+    
+    padding: 100px 60px;
+    background: $color-main;
+
+    @include mq() {
+        padding: 20px 10px;
+    }
+    &__wrapper {
+
+    }
+
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+
+        @include mq() {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        @include mq() {
+            margin-top: 20px;
+        }
+
+        &-first {
+            width: 20%;
+            
+
+            @include mq() {
+                width: 90%;
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+
+        &-second {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+
+            @include mq() {
+                width: 90%;
+            }
+        }
+
+        &-sird {
+            display: flex;
+            justify-content: center;
+
+            @include mq() {
+                width: 90%;
+            }
+            
+        }
+
+        &__left {
+            &__img {
+
+                img {
+                    width: 250px;
+                    height: 280px;
+                    object-fit:cover;
+
+                    @include mq() {
+                        width: 180px;
+                        height: 220px;
+                    }
+                }
+            }
+        }
+
+        &__right {
+            color: #fff;
+            padding: 20px;
+            font-weight: bold;
+
+            @include mq() {
+                text-align: center;
+            }
+            &__event {
+                margin-bottom: 10px;
+                span {
+                    font-size: 12px;
+                    font-weight: normal;
+
+                    &:first-child {
+                        border: 1px solid #fff;
+                        border-radius: 999px;
+                        padding: 4px 12px;
+                    }
+
+                    &:last-child {
+                        margin-left: 14px;
+                    }
+                }
+            }
+
+            &__date,
+            &__articte,
+            &__music {
+                margin: 10px 0;
+            }
+
+            &__date {
+                font-size: 24px;                
+            }
+
+            &__articte {
+                font-size: 24px;
+            }
+
+            &__music {
+                font-size: 16px;
+                a {
+                    color: #fff;
+                    margin: 20px 0;
+                    padding: 4px 20px;
+                    border: 1px solid #fff;
+                    display: inline-block;
+                    border-radius: 999px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
+
+    &__ttl {
+        font-size: 36px;
+        color: #fff;
+        margin-bottom: 40px;
+
+        @include mq() {
+            font-size: 24px;
+        }
+    }
+
+    &__btn {
+        @include outline-btn();
+        
+        a {
+            border-radius: 999px;    
+        }
+
+    }
+
+
+}
